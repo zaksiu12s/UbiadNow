@@ -1,10 +1,10 @@
 import './output.css';
 
 const app = document.querySelector("[data-id='app']");
-const temperatureDataDiv = app?.querySelector("[data-id='temperatureData']");
+const temperatureDataTable = app?.querySelector("[data-id='temperatureData']");
 
 async function main() {
-  if (temperatureDataDiv) {
+  if (temperatureDataTable) {
     const allData = await getAllData();
 
     const temperatureData = allData.data.filter((data: any) => {
@@ -17,9 +17,18 @@ async function main() {
       const value = data.value;
       const date = new Date(data.timestamp);
 
-      const element = document.createElement("div");
-      element.textContent = `Temperature: ${value}°C, Date: ${date.toLocaleString()}`;
-      temperatureDataDiv.appendChild(element);
+      const row = document.createElement("tr");
+
+      const temperatureCol = document.createElement("td");
+      temperatureCol.className = "px-10";
+      const dateCol = document.createElement("td");
+
+      temperatureCol.textContent = `${value}°C`;
+      dateCol.textContent = date.toLocaleString();
+
+      row.appendChild(temperatureCol);
+      row.appendChild(dateCol);
+      temperatureDataTable.appendChild(row);
     });
   }
 }

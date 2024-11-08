@@ -554,16 +554,21 @@ video {
   display: none;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table {
+  display: table;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
 
 .w-screen {
   width: 100vw;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .overflow-hidden {
@@ -573,6 +578,11 @@ video {
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .py-5 {
