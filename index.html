@@ -8,7 +8,14 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app">Hello</div>
+    <div data-id="app" class="w-screen min-h-screen overflow-hidden">
+      <header
+        class="text-center text-3xl bg-green-500 text-white font-bold py-5"
+      >
+        UbiadNow
+      </header>
+      <div data-id="temperatureData" class="w-full"></div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
